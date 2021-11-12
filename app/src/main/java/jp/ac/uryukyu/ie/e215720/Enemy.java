@@ -34,10 +34,18 @@ public class Enemy {
      * @param hero 攻撃対象
      */
     public void attack(Hero hero){
-        int damage = (int)(Math.random() * attack);
-        System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.name, damage);
-        hero.wounded(damage);
-    }
+        if ( hitPoint >0){
+            int damage = (int)(Math.random() * attack);
+            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.name, damage);
+            hero.wounded(damage);
+        }
+        
+        if( hitPoint < 0){
+            int damage1 = (0* attack);
+            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.name, damage1);
+            hero.wounded(damage1);
+        }
+    }    
 
     /**
      * 自身へ攻撃されたときのダメージ処理をするメソッド。
@@ -50,6 +58,10 @@ public class Enemy {
             dead = true;
             System.out.printf("モンスター%sは倒れた。\n", name);
         }
+    
+
+
+
     }
 
 }
