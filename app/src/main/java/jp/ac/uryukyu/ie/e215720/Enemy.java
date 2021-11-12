@@ -47,6 +47,7 @@ public class Enemy {
 
     /**
      * Heroへ攻撃するメソッド。
+     * モンスターのhpに応じて攻撃できるかを判断する.hpが0の時は相手にダメージはない
      * attackに応じて乱数でダメージを算出し、hero.wounded()によりダメージ処理を実行。
      * @param hero 攻撃対象
      */
