@@ -58,7 +58,7 @@ public class Enemy {
             hero.wounded(damage);
         }
         
-        if( hitPoint < 0){
+        else{
             int damage1 = (0* attack);
             System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.getname(), damage1);
             hero.wounded(damage1);
