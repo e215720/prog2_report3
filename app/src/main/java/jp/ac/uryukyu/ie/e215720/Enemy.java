@@ -5,14 +5,18 @@ public class Enemy extends LivingThing{
     public Enemy(String name, int maximumHP, int attack){
         super(name, maximumHP, attack);
     }
-    public void enemyAttack(LivingThing opponent){
+    public void heroAttack(LivingThing opponent){
         super.attack(opponent);
     }
     @Override
     public void wounded(int damage) {
-        // TODO Auto-generated method stub
-        System.out.printf("勇者%sは道半ばで力尽きてしまった。\n",getName());
-       }
+        hitPoint -= damage;
+        if( hitPoint < 0 ) {
+            this.dead = true;
+            System.out.printf("モンスター%sは倒れた。\n", name);
+    
+        }
    
+    }
 
-}
+}    
