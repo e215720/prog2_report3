@@ -13,10 +13,10 @@ package jp.ac.uryukyu.ie.e215720;
  *  boolean getdead; //指定されたモブの生死状態を返す。true=死亡。
  */
 public class LivingThing {
-    String name;
-    int hitPoint;
-    int attack;
-    boolean dead;
+    private String name;
+    private int hitPoint;
+    private int attack;
+    private boolean dead;
     public  LivingThing(String name, int maximumHP, int attack){
         this.name = name;
         this.hitPoint = maximumHP;
@@ -32,6 +32,19 @@ public class LivingThing {
     public boolean isDead(){
         return  this.dead ;
     }
+    public void setHitPoint(int t){
+        this.hitPoint -= t;
+    }
+    public int getHitPoint(){
+        return hitPoint;
+    }
+    public int getAttack(){
+        return  this.attack;
+    }
+    public void setDead(boolean t){
+        this.dead = t;
+    }
+
   
     public void attack(LivingThing opponent){
         if (!(this.isDead())){
